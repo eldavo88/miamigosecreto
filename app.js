@@ -31,7 +31,7 @@ function actualizarLista(){
       listadeAmigos.appendChild(itemLista);
     }
 }
-function sortearAmigos(){
+function sortearAmigo(){
     if (amigos.length < 2) {
         alert('Debe haber al menos dos nombres para poder realizar el sorteo.');
         return;}
