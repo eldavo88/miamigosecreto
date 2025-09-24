@@ -17,4 +17,10 @@ function agregarAmigo(){
 
     amigos.push(guardaAmigo);
     espacioAmigo.value ='';
+    actualizarLista();
+}
+
+function actualizarLista(){
+    let listadeAmigos = document.getElementById('listaAmigos');
+    listadeAmigos.innerHTML = '';
 }
