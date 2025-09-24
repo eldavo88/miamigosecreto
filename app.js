@@ -28,6 +28,26 @@ function actualizarLista(){
       let amigo = amigos[i];
       let itemLista = document.createElement("li");
       itemLista.textContent = amigo;
-      listaElemento.appendChild(itemLista);
+      listadeAmigos.appendChild(itemLista);
+    }
+}
+function sorteoAmigos(){
+    if (amigos.length < 2) {
+        alert('Debe haber al menos dos nombres para poder realizar el sorteo.');
+        return;}
+    
+/*De acuerdo a lo que estuve investigando, utilizar el algorimo llamado
+Fisher-Yates es la manera más eficiente de hacer un sorteo*/
+    for (let i = amigos.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [amigos[i], amigos[j]] = [amigos[j], amigos[i]];
+    }
+
+    let resultadoElemento = document.getElementById('resultado');
+    resultadoElemento.innerHTML = '';
+
+    for (let i = 0; i < amigos.length; i++) {
+        let sorteado = amigos[(i + 1) % amigos.length];
+        resultadoElemento.innerHTML += `<li>${amigos[i]} ➡️ ${sorteado}</li>`;
     }
 }
