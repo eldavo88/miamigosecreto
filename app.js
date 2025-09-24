@@ -16,4 +16,5 @@ function agregarAmigo(){
     }
 
     amigos.push(guardaAmigo);
+    espacioAmigo.value ='';
 }
